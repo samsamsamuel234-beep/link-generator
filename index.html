@@ -6,7 +6,7 @@
         body{
             text-align:center;
             font-family:Arial;
-            margin-top:100px;
+            margin-top:50px;
         }
         button{
             padding:10px 20px;
@@ -14,9 +14,21 @@
             background-color:gray;
             color:white;
         }
+        .nav{
+            margin-bottom:20px;
+        }
     </style>
 </head>
 <body>
+
+    <!-- 🔹 Navigation Links -->
+    <div class="nav">
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="privacy.html">Privacy</a>
+    </div>
+    <hr>
 
     <h2>Please wait 15 seconds to unlock</h2>
     <p id="timer">Wait 15 seconds...</p>
@@ -48,7 +60,6 @@ var countdown = setInterval(function() {
     }
 
 }, 1000);
-
 
 function openLink()
 {
