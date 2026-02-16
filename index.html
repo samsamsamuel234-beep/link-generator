@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Link Unlock</title>
+    <style>
+        body{
+            text-align:center;
+            font-family:Arial;
+            margin-top:100px;
+        }
+        button{
+            padding:10px 20px;
+            font-size:18px;
+            background-color:gray;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Please wait 15 seconds to unlock</h2>
+    <p id="timer">Wait 15 seconds...</p>
+
+    <button id="accessBtn" disabled onclick="openLink()">
+        Access Link
+    </button>
+
+<script>
+
+var seconds = 15;
+
+/* 🔥 ADMIN LINK (YOU CHANGE THIS ONLY) */
+var adminLink = "https://your-link-here.com";
+
+var countdown = setInterval(function() {
+
+    seconds--;
+
+    document.getElementById("timer").innerHTML =
+        "Wait " + seconds + " seconds...";
+
+    if(seconds <= 0){
+        clearInterval(countdown);
+        document.getElementById("accessBtn").disabled = false;
+        document.getElementById("accessBtn").style.backgroundColor = "green";
+        document.getElementById("timer").innerHTML =
+            "You can now access the link!";
+    }
+
+}, 1000);
+
+
+function openLink()
+{
+    window.location.href = adminLink;
+}
+
+</script>
+
+</body>
+</html>
